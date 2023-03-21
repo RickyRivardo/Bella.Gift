@@ -1,0 +1,9 @@
+body {
+    background-color:#323232;
+}
+
+.logo {
+    position:absolute;
+    bottom:-15px;
+    right:1250px;
+}

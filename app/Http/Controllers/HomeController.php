@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\models\Barang;
+use App\Models\Barang;
+use App\Models\Barangn;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -27,4 +29,7 @@ class HomeController extends Controller
         $barangs = Barang::paginate(20);
         return view('home', compact('barangs'));
     }
+
+
+
 }

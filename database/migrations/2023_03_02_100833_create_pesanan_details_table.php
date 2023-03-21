@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->integer('barang_id');
             $table->integer('pesanan_id');
             $table->integer('jumlah');
+            $table->string('alamat');
             $table->integer('jumlah_harga');
             $table->timestamps();
         });
