@@ -70,6 +70,9 @@ class PesanController extends Controller
         $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', 0)->first();
         $pesanan->jumlah_harga = $pesanan->jumlah_harga + $barang->harga * $request->jumlah_pesan;
         $pesanan->update();
+
+
+        Alert::image('Pengiriman sukses!', 'Kode verifikasi ', 'qrcode/code.png', '150px', '200px', 'Save it!');
         return redirect('check-out');
     }
 
@@ -82,6 +85,7 @@ class PesanController extends Controller
 
         }
 
+        Alert::image('Pengiriman sukses!', 'Kode verifikasi ', 'qrcode/code.png', '150px', '200px', 'Save it!');
         return view('pesan.check_out', compact('pesanan', 'pesanan_details'));
     }
     public function delete($id)
@@ -131,6 +135,11 @@ class PesanController extends Controller
         Alert::success('Pengiriman sukses , silahkan tunggu kabar', 'Success');
         return redirect('home');
 
+    }
+
+    public function scan()
+    {
+        return view('scan');
     }
 
 

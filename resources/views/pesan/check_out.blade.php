@@ -112,7 +112,7 @@
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus data ?');"><i class="fa fa-trash"></i></button>
                                     
                                       </form>
-                                        <a href="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" download= "{{ $pesanan_detail->barang->nama_barang }}"><i class="fa fa-gift  fa-2x " aria-hidden="true"></i></a>
+                                        <a href="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" download= "{{ $pesanan_detail->barang->nama_barang }}"><i class="fa fa-gift  fa-2x " aria-hidden="true" style="color:#9098B9;"></i></a>
                                          
                                   
                                 </td>

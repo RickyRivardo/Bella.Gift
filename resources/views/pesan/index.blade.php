@@ -17,24 +17,15 @@
                         </div>
                         <div class="col-md-6 mt-5">
                             <h2 style="position:relative;bottom:45px;color:#fff;">{{ $barang->nama_barang }}</h2>
-                            <h5 style="position:relative;bottom:45px;left:450px;;color:#fff">Rp. {{ number_format($barang->harga) }}</h5>
+                            
+                 <h5 style="position:relative;bottom:45px;left:450px;;color:#fff">Rp. {{ number_format($barang->harga) }}</h5>
              
                                  <h6 style="position:relative;bottom:45px;color:#fff">    Detail : <br>  {{ $barang->keterangan }}</h6>  
                                 
-                                   <hr style="color:#fff;" >
-
+                                   <hr class="text-light p-6" >
+                                <h6 class="text-light">Kepada :</h6>
                                        
-                                   <div >
-                              
-                                    <input style="margin:5px;width:30px;height:30px;color:#B9C8DB; " type="radio" name="color" />
-                                
-                                    <input style="margin:5px;width:30px;height:30px;color:#9098B9 " type="radio" name="color" />
                                   
-
-                                    <input style="margin:5px;width:30px;height:30px;color:#ECDEE8 " type="radio" name="color"  />
-                                  
-                                   </div>
-
                                      <hr style="color:#fff;" >
                                    
                                 <table class="table" >
@@ -47,10 +38,16 @@
                                         <td style="border:none;">
                                              <form method="post" action="{{ url('pesan') }}/{{ $barang->id }}" >
                                             @csrf
-                                                <input style="position:relative;right:100px;border-radius:50px;width:100px;text-align:center" type="text" name="jumlah_pesan" value ="1" class="form-control" required="">
+                                                    <select name="alamat"   class="form-select" style="position:relative;bottom:70px;right:120px;">
+                                        
+                                                @foreach(\App\Models\User::all() as $user)
+                                                    <option value="{{ $user->alamat }}">{{ $user->name}}</option>
+                                                @endforeach
+                                                        </select>
+                                                <input style="position:relative;right:200px;bottom:40px;border-radius:50px;width:100px;text-align:center" type="text" name="jumlah_pesan" value ="1" class="form-control" required="">
                                                
-                                                    <input type="alamat" name="alamat" class="form-control " style="position:relative;right:100px;bottom:120px;border-radius:50px;width:400px;" placeholder="isi alamat tujuan" required="">
-                                                    
+                                               
+                                           
                                                 <button type="submit" class="btn btn-secondary mt-5" style="position:relative;right:100px;background-color:#9098B9;border-radius:30px;width:150px;height:50px;"> Beli Sekarang</button>
                                             </form>
                                         </td>

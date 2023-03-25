@@ -10,8 +10,8 @@
   <img src="images/logo1.png" style="position:absolute;width:400px;height:550px;" >
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div style="background-color:#323232;position:relative;top:100px;left:400px;">
+        <div class="col-md-3">
+            <div style="background-color:#323232;position:relative;top:100px;left:320px;">
 
 
                 <div class="card-body">
@@ -22,7 +22,7 @@
                         
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  required autocomplete="email" autofocus placeholder=" email"> 
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  required autocomplete="email" autofocus placeholder=" email" style="position:relative;right:110px;width:325px"> 
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                          
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder=" password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder=" password" style="position:relative;right:110px;width:325px">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
